@@ -8,13 +8,15 @@ import { PlanningPageRoutingModule } from './planning-routing.module';
 
 import { PlanningPage } from './planning.page';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PlanningPageRoutingModule
+    PlanningPageRoutingModule,
+    MatTableModule
   ],
   declarations: [PlanningPage, HeaderComponent]
 })

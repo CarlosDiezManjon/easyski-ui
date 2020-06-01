@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanningPage implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[];
+  profesores: string[];
+
+  constructor() {
+    this.displayedColumns = [
+      '9:00', '10:00','11:00','12:00','13:00','14:00','15:00','16:00'
+    ]
+    this.profesores = [
+      'Carlos','Diana','Zapata','Jorge','Alex','Fran','Alonso','Beltran','Peter'
+    ]
+   }
 
   ngOnInit() {
   }
