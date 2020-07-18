@@ -4,5 +4,17 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>{{titulo}}</ion-title>
+    <ion-buttons slot="end">
+      <button mat-icon-button [matMenuTriggerFor]="hola">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #hola="matMenu">
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Salir</span>
+        </button>
+      </mat-menu>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>

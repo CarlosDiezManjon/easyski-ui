@@ -1,14 +1,18 @@
-import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
 import { IonicModule } from '@ionic/angular';
-
-import { PlanningPageRoutingModule } from './planning-routing.module';
-
-import { PlanningPage } from './planning.page';
 import { HeaderComponent } from 'src/app/layout/header/header.component';
-import {MatTableModule} from '@angular/material/table';
+import { MaterialModule } from 'src/app/material.module';
+
+import { HeaderModule } from './../../layout/header/header.module';
+import { PlanningPageRoutingModule } from './planning-routing.module';
+import { PlanningPage } from './planning.page';
+import { ModalClaseComponent } from 'src/app/components/modal-clase/modal-clase.component';
 
 @NgModule({
   imports: [
@@ -16,8 +20,13 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     IonicModule,
     PlanningPageRoutingModule,
-    MatTableModule
+    HeaderModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
-  declarations: [PlanningPage, HeaderComponent]
+  declarations: [PlanningPage, ModalClaseComponent],
+  entryComponents: [
+    ModalClaseComponent
+  ]
 })
-export class PlanningPageModule {}
+export class PlanningPageModule { }

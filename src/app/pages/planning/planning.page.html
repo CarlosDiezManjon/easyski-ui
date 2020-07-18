@@ -1,11 +1,24 @@
 <app-header titulo="Planning"></app-header>
 
 <ion-content>
-    <div>
-        <table mat-table>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
+
+    <div class="card">
+        <table>
+
+            <tr class="horas">
+                <td class="esquina"></td>
+                <td *ngFor="let hora of horas">{{hora}}</td>
+            </tr>
+            <tr *ngFor="let prof of profesores">
+                <td class="profesores">{{prof}}</td>
+                <td *ngFor="let hora of horas" class="clases" cdkDropList (cdkDropListDropped)="onDrop($event)">
+                    <div (click)="openModal(hora, prof)" cdkDrag>
+                        hola - {{hora}}:{{prof}}
+                    </div>
+                </td>
+            </tr>
         </table>
     </div>
+
 </ion-content>
