@@ -1,4 +1,4 @@
-<h1 mat-dialog-title> Nueva Clase</h1>
+<h1 mat-dialog-title> Nueva Clase: Profesor {{clase.profesor.nombre}} Hora inicio: {{clase.fhInicio}}</h1>
 <mat-divider></mat-divider>
 
 <form [formGroup]="formClase" #formModalClase="ngForm">
@@ -14,7 +14,23 @@
         <input matInput formControlName="cliente" placeholder="Nombre cliente">
       </mat-form-field>
       <mat-form-field>
-        <input matInput formControlName="numAlumnos" placeholder="Nº Alumnos">
+        <input matInput formControlName="numAlumnos" placeholder="Nº Alumnos" type="number" min="1">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Modalidad</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let mod of modalidades" [value]="mod">
+            {{mod}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tipo de clase</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let tipo of tipoClase" [value]="tipo">
+            {{tipo}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </div>

@@ -68,4 +68,9 @@ td.profesores {
 
 td.clases {
     padding: 30px;
+    cursor: pointer;
+}
+
+td.clases:hover{
+  background-color: #00b7ff13;
 }

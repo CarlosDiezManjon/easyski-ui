@@ -12,10 +12,8 @@
             </tr>
             <tr *ngFor="let prof of profesores">
                 <td class="profesores">{{prof}}</td>
-                <td *ngFor="let hora of horas" class="clases" cdkDropList (cdkDropListDropped)="onDrop($event)">
-                    <div (click)="openModal(hora, prof)" cdkDrag>
-                        hola - {{hora}}:{{prof}}
-                    </div>
+                <td *ngFor="let hora of horas" class="clases" (click)="openModal(hora, prof)">
+
                 </td>
             </tr>
         </table>

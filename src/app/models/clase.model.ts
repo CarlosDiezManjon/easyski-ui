@@ -6,7 +6,9 @@ export class Clase {
         public fhInicio: Date = null,
         public fhFin: Date = null,
         public cliente: string = "",
-        public numAlumnos: number = null
+        public numAlumnos: number = null,
+        public tipoClase: string = "",
+        public modalidad: string = ""
     ) { }
 
 }
